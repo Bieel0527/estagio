@@ -1,0 +1,79 @@
+Questão 1:
+
+Ao analisar o código fornecido, podemos observar que ele realiza um loop enquanto a variável K for menor que o valor de INDICE. Durante cada iteração do loop, o valor de K é incrementado em 1 e somado à variável SOMA.
+No caso do código fornecido, a variável INDICE foi inicializada com o valor 13. Portanto, o loop será executado 13 vezes, uma vez que K começa com o valor 0 e é incrementado em 1 a cada iteração até atingir o valor de INDICE.
+Ao final do processamento, o valor da variável SOMA será 91.
+
+
+
+Questão 2:
+
+#include <stdio.h>
+
+int main() {
+    int num, primeiro = 0, segundo = 1, proximo = 0;
+
+    printf("Digite um número para verificar se ele pertence à sequência de Fibonacci: ");
+    scanf("%d", &num);
+
+    while (proximo < num) {
+        proximo = primeiro + segundo;
+        primeiro = segundo;
+        segundo = proximo;
+    }
+
+    if (proximo == num) {
+        printf("%d pertence à sequência de Fibonacci.\n", num);
+    } else {
+        printf("%d não pertence à sequência de Fibonacci.\n", num);
+    }
+
+    return 0;
+}
+
+
+
+Questão 3:
+
+a) A lógica aqui é adicionar 2 a cada número. Portanto, o próximo número será 9.
+b) Nesta sequência, cada número é obtido multiplicando o número anterior por 2. O próximo número será 128.
+c) Essa sequência consiste nos quadrados dos números naturais. O próximo número será 49, que é o quadrado de 7.
+d) Aqui, os números são os quadrados dos números pares. Portanto, o próximo número será 100, que é o quadrado de 10.
+e) Esta sequência é a famosa sequência de Fibonacci, onde cada número é a soma dos dois anteriores. O próximo número será 13, que é a soma de 5 e 8.
+f) Nesta sequência, parece não haver uma lógica clara. No entanto, observando os números, podemos ver que a diferença entre os números consecutivos aumenta em 2 a cada passo. Portanto, o próximo número será 21.
+
+
+
+Questão 4:
+
+Na primeira ida até as lâmpadas, eu ligaria um dos interruptores e aguardar alguns minutos antes de desligá-lo. Em seguida, eu iria até as lâmpadas. Se uma estiver acesa, eu saberei que o interruptor que eu liguei controla essa lâmpada. Se estiver apagada e ainda estiver
+fria ao toque, eu saberei que o interruptor que eu não toquei controla essa lâmpada. E a lâmpada restante será controlada pelo interruptor que eu desliguei. Utilizei apenas duas idas.
+
+
+
+Questão 5:
+
+#include <stdio.h>
+#include <string.h>
+
+void inverterString(char *str) {
+    int tamanho = strlen(str);
+    for (int i = 0; i < tamanho / 2; i++) {
+        char temp = str[i];
+        str[i] = str[tamanho - 1 - i];
+        str[tamanho - 1 - i] = temp;
+    }
+}
+
+int main() {
+    char string[100];
+
+    printf("Digite uma string: ");
+    scanf("%s", string);
+
+    inverterString(string);
+
+    printf("String invertida: %s\n", string);
+
+    return 0;
+}
